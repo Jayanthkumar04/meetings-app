@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 0;
+  background-color: #63bccb;
+  width: 7rem;
+  font-weight: 700;
+}

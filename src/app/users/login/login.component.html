@@ -1,0 +1,36 @@
+<div class="parent">
+  <div class="box">
+    <h1>LOGIN</h1>
+    <form #formSubmit="ngForm" (ngSubmit)="submit(formSubmit)">
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          autocomplete="off"
+          ngModel
+          #email="ngModel"
+        />
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          autocomplete="off"
+          ngModel
+          #password="ngModel"
+        />
+      </div>
+      <div>
+        <input type="submit" value="Login" />
+      </div>
+      <div>
+        Dont have an account?<a routerLink="/register">Register here</a>
+      </div>
+    </form>
+  </div>
+</div>
