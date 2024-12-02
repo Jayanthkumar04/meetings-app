@@ -1,12 +1,12 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, NgbCollapse],
+  imports: [RouterLink, RouterLinkActive, NgbCollapse, RouterOutlet],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
 })
