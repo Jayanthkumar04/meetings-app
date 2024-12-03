@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../user.service';
 import { NgForm, NgModel, FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
   submit(form: NgForm) {
     console.log(form);
     const user = {
@@ -24,6 +24,7 @@ export class RegisterComponent {
     this.userService.addUser(user).subscribe({
       next: (data) => {
         console.log(data);
+        this.router.navigateByUrl('/login');
       },
     });
   }
