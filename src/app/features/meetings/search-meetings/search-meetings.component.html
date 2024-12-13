@@ -1,0 +1,74 @@
+<div class="container">
+  <h3>Search for meetings</h3>
+  <hr />
+  <form #meetingForm="ngForm" (ngSubmit)="onSubmitForm(meetingForm)">
+    <div class="form-group">
+      <label for="day">Date</label>
+      <select name="day" id="day" class="form-control" [(ngModel)]="period">
+        <option value="present" selected>TODAY</option>
+        <option value="past">PAST</option>
+        <option value="future">FUTURE</option>
+        <option value="all">ALL</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="search">Search for meetings</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="1 "
+        placeholder="search using words which describe the meetings"
+        [(ngModel)]="search"
+        name="search"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary my-2">Search</button>
+  </form>
+
+  <hr />
+</div>
+
+<div class="container-2">
+  <h3 class="my-2">Meetings matching search criteria</h3>
+  <div *ngFor="let m of meetings">
+    <div class="card">
+      <div class="card-body">
+        <h5>
+          {{ m.date | date : "d MMMM Y" }}
+          <span
+            >{{ m.startTime.hours | number : "2.0" }}:{{
+              m.startTime.minutes | number : "2.0"
+            }}
+            - {{ m.endTime.hours | number : "2.0" }}:{{
+              m.endTime.minutes | number : "2.0"
+            }}</span
+          >
+        </h5>
+
+        <p class="card-text">{{ m.name }}</p>
+        <a class="btn btn-danger" (click)="kickOff(m._id)">Kickoff Yourself</a>
+        <hr />
+
+        <span><b>Attendees:</b> </span>
+        <span *ngFor="let mem of m.attendees"> {{ mem.email }}, </span>
+        <div>
+          <select name="members" id="" class="my-2" [(ngModel)]="memberId">
+            <option value="selectMember">Select Member</option>
+            <option *ngFor="let user of allUsers" [value]="user._id">
+              {{ user.email }}
+            </option>
+          </select>
+          <span class="mx-2"
+            ><input
+              type="submit"
+              value="Add"
+              class="bt"
+              (click)="addUser(m._id)"
+          /></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,46 +1,56 @@
-<div class="containerr">
-  <div class="inside-container">
-    <form #formSubmit="ngForm" (ngSubmit)="submit(formSubmit)">
-      <h1>REGISTER HERE</h1>
-      <div>
-        <label for="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          autocomplete="off"
-          ngModel
-          #name="ngModel"
-        />
-      </div>
+<div class="parent">
+  <div class="container">
+    <div class="inside-container">
+      <form #formSubmit="ngForm" (ngSubmit)="submit(formSubmit)">
+        <h1>REGISTER HERE</h1>
 
-      <div>
-        <label for="email">Email:</label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          autocomplete="off"
-          ngModel
-          #email="ngModel"
-        />
-      </div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            autocomplete="off"
+            ngModel
+            #name="ngModel"
+            required
+          />
+        </div>
 
-      <div>
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          autocomplete="off"
-          ngModel
-          #password="ngModel"
-        />
-      </div>
-      <div>
-        <input type="submit" value="submit now" />
-      </div>
-      <div>Already have an account?<a routerLink="/login">Login here</a></div>
-    </form>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="off"
+            ngModel
+            #email="ngModel"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            autocomplete="off"
+            ngModel
+            #password="ngModel"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="Submit Now" />
+        </div>
+
+        <div class="login-link">
+          Already have an account? <a routerLink="/login">Login here</a>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

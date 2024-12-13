@@ -1,17 +1,96 @@
 .parent {
   width: 100vw;
-  height: 90vh;
-  border: 2px solid green;
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
+  background-color: #63bccb;
+  // background-color: #f4f7fc;
 }
+
+/* Box styling */
 .box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 350px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border: 2px solid black;
-  width: 400px;
-  height: 400px;
+}
+
+/* Heading styling */
+.title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input group styling */
+.input-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff; /* Highlight border color */
+  outline: none;
+}
+
+/* Submit button styling */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer and Register link styling */
+.form-footer {
+  margin-top: 20px;
+}
+
+.register-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-link .link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link .link:hover {
+  text-decoration: underline;
 }

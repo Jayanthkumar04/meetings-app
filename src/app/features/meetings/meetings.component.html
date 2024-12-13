@@ -1,1 +1,34 @@
-<p>meetings works!</p>
+<div class="container">
+  <h3>MEETINGS</h3>
+  <hr />
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div>
+      <!-- left menu -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/meetings/search"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Filter/Search meetings
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/meetings/addMeeting"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Add a meeting
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>

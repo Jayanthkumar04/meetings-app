@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container2 {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.date-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date-selection {
+}
+
+.box {
+  height: 50px;
+  margin-left: 0;
+  width: 100%;
+  background-color: #63bccb;
+  margin-bottom: 2px;
+  position: relative;
+}
+
+.top-left {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  margin: 0;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  margin: 0;
+}

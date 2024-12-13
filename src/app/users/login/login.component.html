@@ -1,21 +1,23 @@
 <div class="parent">
   <div class="box">
-    <h1>LOGIN</h1>
+    <h1 class="title">LOGIN</h1>
     <form #formSubmit="ngForm" (ngSubmit)="submit(formSubmit)">
-      <div>
-        <label for="email">Email:</label>
+      <div class="input-group">
+        <label for="email" class="label">Email:</label>
         <input
-          type="text"
+          type="email"
           name="email"
           id="email"
           autocomplete="off"
           ngModel
           #email="ngModel"
+          class="input-field"
+          required
         />
       </div>
 
-      <div>
-        <label for="password">Password:</label>
+      <div class="input-group">
+        <label for="password" class="label">Password:</label>
         <input
           type="password"
           name="password"
@@ -23,13 +25,18 @@
           autocomplete="off"
           ngModel
           #password="ngModel"
+          class="input-field"
+          required
         />
       </div>
-      <div>
-        <input type="submit" value="Login" />
+
+      <div class="form-footer">
+        <input type="submit" value="Login" class="submit-btn" />
       </div>
-      <div>
-        Dont have an account?<a routerLink="/register">Register here</a>
+
+      <div class="register-link">
+        Don't have an account?
+        <a routerLink="/register" class="link">Register here</a>
       </div>
     </form>
   </div>

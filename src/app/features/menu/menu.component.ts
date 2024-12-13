@@ -12,4 +12,11 @@ import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 })
 export class MenuComponent {
   isNavbarCollapsed = true;
+
+  myEmail = localStorage.getItem('email');
+
+  makeTokenNull() {
+    localStorage.removeItem('Authorization');
+    // localStorage.setItem('Authorization', '');
+  }
 }
