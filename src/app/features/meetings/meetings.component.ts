@@ -17,7 +17,7 @@ export class MeetingsComponent implements OnInit {
   }
 
   getAllMeetings() {
-    this.http.get('http://localhost:2000/api/users').subscribe({
+    this.http.get('https://localhost:7110/api/Meetings/users').subscribe({
       next: (data) => {
         console.log(data);
       },

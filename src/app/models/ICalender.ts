@@ -4,6 +4,10 @@ interface IAttendees {
 }
 interface ICalender {
   name: string;
+  date: Date;
+  description: string;
+  startTime: string;
+  endTime: string;
   attendees: IAttendees[];
 }
 

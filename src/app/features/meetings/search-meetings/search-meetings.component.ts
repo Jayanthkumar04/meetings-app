@@ -26,9 +26,21 @@ export class SearchMeetingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMeetingsByPeriod();
+    this.getMeetingsByPeriodAndSearch();
     this.getAllUsers();
   }
+  /*
+  getHour(time: ITime): string {
 
+    console.log(time.hour+time.minute);
+    return time.substring(0, 2);
+  }
+
+  getMinutes(time: string): string {
+    return time.substring(3, 5);
+  }
+
+  */
   getAllUsers() {
     this.featuresServie.getAllUsers().subscribe({
       next: (data) => {
@@ -45,6 +57,7 @@ export class SearchMeetingsComponent implements OnInit {
       },
     });
   }
+
   getMeetingsByPeriodAndSearch() {
     this.featuresServie
       .getMeetingsByPeriodAndSearch(this.period, this.search)
@@ -61,25 +74,38 @@ export class SearchMeetingsComponent implements OnInit {
   onSubmitForm(form: NgForm) {
     if (this.search != null) this.getMeetingsByPeriodAndSearch();
     else {
+      // this.getMeetingsByPeriod();
       this.getMeetingsByPeriod();
     }
   }
 
-  kickOff(id: string) {
+  kickOff(id: number) {
     this.featuresServie.kickOff(id).subscribe({
       next: (data) => {
-        console.log(data);
+        console.log('the data is ', data);
         this.getMeetingsByPeriod();
       },
     });
   }
 
-  addUser(meetingId: string) {
-    this.featuresServie.addUser(this.memberId, meetingId).subscribe({
+  addUser(meetingId: number) {
+    console.log('meeting id', meetingId, 'membermail', this.memberId);
+
+    const userMail = {
+      email: this.memberId,
+    };
+
+    this.featuresServie.addUser(userMail, meetingId).subscribe({
       next: (data) => {
         console.log(data);
-        this.getMeetingsByPeriod();
+        // this.getMeetingsByPeriod();
+        this.getMeetingsByPeriodAndSearch();
       },
     });
   }
+}
+
+export interface ITime {
+  hour: number;
+  minute: number;
 }

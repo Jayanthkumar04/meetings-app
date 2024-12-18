@@ -38,12 +38,13 @@ export class LoginComponent implements OnInit {
 
   submit(form: NgForm) {
     const user = {
-      email: form.value.email,
+      username: form.value.email,
       password: form.value.password,
     } as Omit<IUser, 'name'>;
     this.authService.login(user).subscribe({
       next: (loginResponse) => {
-        localStorage.setItem('Authorization', loginResponse.token);
+        console.log(loginResponse.authToken);
+        localStorage.setItem('Authorization', loginResponse.authToken);
         localStorage.setItem('email', loginResponse.email);
         this.router.navigateByUrl('/calender');
         console.log(loginResponse);

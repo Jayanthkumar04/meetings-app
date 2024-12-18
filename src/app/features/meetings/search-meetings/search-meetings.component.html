@@ -37,18 +37,11 @@
       <div class="card-body">
         <h5>
           {{ m.date | date : "d MMMM Y" }}
-          <span
-            >{{ m.startTime.hours | number : "2.0" }}:{{
-              m.startTime.minutes | number : "2.0"
-            }}
-            - {{ m.endTime.hours | number : "2.0" }}:{{
-              m.endTime.minutes | number : "2.0"
-            }}</span
-          >
+          <span> {{ m.startTime }} - {{ m.endTime }}</span>
         </h5>
 
         <p class="card-text">{{ m.name }}</p>
-        <a class="btn btn-danger" (click)="kickOff(m._id)">Kickoff Yourself</a>
+        <a class="btn btn-danger" (click)="kickOff(m.id)">Kickoff Yourself</a>
         <hr />
 
         <span><b>Attendees:</b> </span>
@@ -56,7 +49,7 @@
         <div>
           <select name="members" id="" class="my-2" [(ngModel)]="memberId">
             <option value="selectMember">Select Member</option>
-            <option *ngFor="let user of allUsers" [value]="user._id">
+            <option *ngFor="let user of allUsers" [value]="user.email">
               {{ user.email }}
             </option>
           </select>
@@ -65,7 +58,7 @@
               type="submit"
               value="Add"
               class="bt"
-              (click)="addUser(m._id)"
+              (click)="addUser(m.id)"
           /></span>
         </div>
       </div>

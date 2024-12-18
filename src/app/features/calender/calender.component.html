@@ -13,52 +13,110 @@
   </section>
 
   <br />
-  <section class="data-display">
-    <ng-container>
-      <!-- Loop through an array of ICalender objects -->
-      <div *ngFor="let field of ICalender">
-        <!-- Display the name of the calendar -->
-        <div>{{ field.name }}</div>
 
-        <!-- Loop through attendees (since it's an object, display the emails) -->
-        <div *ngFor="let attendee of field.attendees">
-          {{ attendee.email }}
-        </div>
+  <div class="parent">
+    <section class="meeting-details">
+      <div class="box" id="one">
+        <p class="top-left">0</p>
       </div>
-    </ng-container>
-  </section>
 
-  <section class="meeting-details">
-    <div class="box" id="one">
-      <p class="top-left">0</p>
-      <p class="bottom-left">1</p>
-    </div>
+      <div class="box" id="two">
+        <p class="top-left">1</p>
+      </div>
+      <div class="box" id="three">
+        <p class="top-left">2</p>
+      </div>
+      <div class="box" id="four">
+        <p class="top-left">3</p>
+      </div>
+      <div class="box" id="five">
+        <p class="top-left">4</p>
+      </div>
+      <div class="box" id="six">
+        <p class="top-left">5</p>
+      </div>
+      <div class="box" id="seven">
+        <p class="top-left">6</p>
+      </div>
+      <div class="box" id="eight">
+        <p class="top-left">7</p>
+      </div>
+      <div class="box" id="nine">
+        <p class="top-left">8</p>
+      </div>
+      <div class="box" id="ten">
+        <p class="top-left">9</p>
+      </div>
+      <div class="box" id="eleven">
+        <p class="top-left">10</p>
+      </div>
+      <div class="box" id="twelve">
+        <p class="top-left">11</p>
+      </div>
+      <div class="box" id="thriteen">
+        <p class="top-left">12</p>
+      </div>
+      <div class="box" id="fourteen">
+        <p class="top-left">13</p>
+      </div>
+      <div class="box" id="fiveteen">
+        <p class="top-left">14</p>
+      </div>
+      <div class="box" id="sixteen">
+        <p class="top-left">15</p>
+      </div>
+      <div class="box" id="seventeen">
+        <p class="top-left">16</p>
+      </div>
+      <div class="box" id="eighteen">
+        <p class="top-left">17</p>
+      </div>
+      <div class="box" id="nineteen">
+        <p class="top-left">18</p>
+      </div>
+      <div class="box" id="twenty">
+        <p class="top-left">19</p>
+      </div>
+      <div class="box" id="tone">
+        <p class="top-left">20</p>
+      </div>
+      <div class="box" id="ttwo">
+        <p class="top-left">21</p>
+      </div>
+      <div class="box" id="tthree">
+        <p class="top-left">22</p>
+      </div>
 
-    <div class="box" id="two" style="background-color: whitesmoke">
-      project kickoff
-      <hr />
-      attendees:marjflsdjflj#gmail.com,jlfjsdlkjlksj#gmail.com
-    </div>
-    <div class="box" id="three"></div>
-    <div class="box" id="four"></div>
-    <div class="box" id="five"></div>
-    <div class="box" id="six"></div>
-    <div class="box" id="seven"></div>
-    <div class="box" id="eight"></div>
-    <div class="box" id="nine"></div>
-    <div class="box" id="ten"></div>
-    <div class="box" id="eleven"></div>
-    <div class="box" id="twelve"></div>
-    <div class="box" id="thriteen"></div>
-    <div class="box" id="fourteen"></div>
-    <div class="box" id="fiveteen"></div>
-    <div class="box" id="sixteen"></div>
-    <div class="box" id="seventeen"></div>
-    <div class="box" id="eighteen"></div>
-    <div class="box" id="nineteen"></div>
-    <div class="box" id="twenty"></div>
-    <div class="box" id="tone"></div>
-    <div class="box" id="ttwo"></div>
-    <div class="box" id="tthree"></div>
-  </section>
+      <div class="box" id="tthree">
+        <p class="top-left">23</p>
+      </div>
+    </section>
+
+    <section class="data-display">
+      <!--    
+      <ng-container>
+        <div *ngFor="let field of ICalender">
+          <div
+            class="meeting-box"
+            [ngStyle]="{ 'background-color': 'gray', margin: '5px' }"
+          >
+            <span>
+              <div>
+                <p>{{ field.name }}</p>
+              </div>
+            </span>
+            <span>
+              <div class="attendees-container">
+                <div *ngFor="let attendee of field.attendees">
+                  <p>
+                    <span class="attendee-email">{{ attendee.email }}</span>
+                  </p>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </ng-container>
+    --></section>
+  </div>
 </div>

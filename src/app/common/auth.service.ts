@@ -9,7 +9,7 @@ export class AuthService {
 
   login(credentials: any) {
     return this.http.post<any>(
-      `http://localhost:2000/api/auth/login`,
+      `https://localhost:7110/api/Auth/Login`,
       credentials,
       {
         headers: {

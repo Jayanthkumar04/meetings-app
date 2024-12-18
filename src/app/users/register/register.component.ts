@@ -16,16 +16,22 @@ export class RegisterComponent {
     console.log(form);
     const user = {
       name: form.value.name,
-      email: form.value.email,
+      username: form.value.email,
       password: form.value.password,
     };
 
     console.log(user);
-    this.userService.addUser(user).subscribe({
-      next: (data) => {
-        console.log(data);
-        this.router.navigateByUrl('/login');
-      },
-    });
+    if (form.value.password === form.value.password2) {
+      this.userService.addUser(user).subscribe({
+        next: (data) => {
+          console.log(data);
+          this.router.navigateByUrl('/login');
+        },
+      });
+    } else {
+      alert(
+        'the password and confirm password are not correct please check it'
+      );
+    }
   }
 }

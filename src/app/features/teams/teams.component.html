@@ -1,92 +1,35 @@
 <div class="container">
   <h3>Teams</h3>
-
   <hr />
+  <h6>View and edit teams you are part of</h6>
 
-  <p>view and edit teams you are part of</p>
-  <div class="row">
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Customer acqusition campaign</h5>
-        <h6 class="card-title">&#64;customer-acqusition</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
-        <a href="#" class="btn btn-danger">Excuse Yourself</a>
-        <hr />
-        <span><b>Members:</b>johnexample.com,janeexample.com</span>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Customer acqusition campaign</h5>
-        <h6 class="card-title">&#64;customer-acqusition</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
-        <a href="#" class="btn btn-danger">Excuse Yourself</a>
-        <hr />
-        <span><b>Members:</b>johnexample.com,janeexample.com</span>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Customer acqusition campaign</h5>
-        <h6 class="card-title">&#64;customer-acqusition</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
-        <a href="#" class="btn btn-danger">Excuse Yourself</a>
-        <hr />
-        <span><b>Members:</b>johnexample.com,janeexample.com</span>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Customer acqusition campaign</h5>
-        <h6 class="card-title">&#64;customer-acqusition</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
-        <a href="#" class="btn btn-danger">Excuse Yourself</a>
-        <hr />
-        <span><b>Members:</b>johnexample.com,janeexample.com</span>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Customer acqusition campaign</h5>
-        <h6 class="card-title">&#64;customer-acqusition</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
-        <a href="#" class="btn btn-danger">Excuse Yourself</a>
-        <hr />
-        <span><b>Members:</b>johnexample.com,janeexample.com</span>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Customer acqusition campaign</h5>
-        <h6 class="card-title">&#64;customer-acqusition</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
-        <a href="#" class="btn btn-danger">Excuse Yourself</a>
-        <hr />
-        <span><b>Members:</b>johnexample.com,janeexample.com</span>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Customer acqusition campaign</h5>
-        <h6 class="card-title">&#64;customer-acqusition</h6>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
-        <a href="#" class="btn btn-danger">Excuse Yourself</a>
-        <hr />
-        <span><b>Members:</b>johnexample.com,janeexample.com</span>
+  <div class="row g-4">
+    <div *ngFor="let t of teams" class="col-12 col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ t.name }}</h5>
+          <h6 class="card-title">&#64;{{ t.shortName }}</h6>
+          <p class="card-text">
+            {{ t.description }}
+          </p>
+          <button class="btn btn-danger" (click)="excuseYourself(t._id)">
+            Excuse Yourself
+          </button>
+          <hr />
+          <span><b>Members:</b></span>
+          <span *ngFor="let i of t.members">{{ i.email }}</span>
+        </div>
+        <div>
+          <select name="members" id="" class="my-2" [(ngModel)]="memberId">
+            <option value="selectMember">Select Member</option>
+            <option *ngFor="let user of allUsers" [value]="user.id">
+              {{ user.email }}
+            </option>
+          </select>
+          <span class="mx-2"
+            ><input type="submit" value="Add" class="bt"
+          /></span>
+        </div>
       </div>
     </div>
   </div>

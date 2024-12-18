@@ -1,5 +1,5 @@
 interface IMeetUsers {
-  _id: string;
+  id: string;
   email: string;
 }
 

@@ -32,7 +32,7 @@ export class AddMeetingComponent {
     console.log('attendees', attendeesArray);
     // const attendeesArray = Array.isArray(atten) ? atten : atten ? [atten] : [];
 
-    const formAdd: Omit<IMeetings, '_id'> = {
+    const formAdd: Omit<IMeetings, 'id'> = {
       name: form.value.name,
       startTime: { hours: sh, minutes: sm },
       endTime: { hours: eh, minutes: em },
@@ -41,7 +41,6 @@ export class AddMeetingComponent {
       attendees: attendeesArray,
     };
 
-    console.log('helllljfl', formAdd);
     this.featureService.addMeeting(formAdd).subscribe({
       next: (data) => {
         console.log(data);

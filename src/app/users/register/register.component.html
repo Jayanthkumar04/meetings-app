@@ -44,6 +44,19 @@
         </div>
 
         <div class="form-group">
+          <label for="password2">Confirm Password:</label>
+          <input
+            type="password"
+            name="password2"
+            id="password2"
+            autocomplete="off"
+            ngModel
+            #password2="ngModel"
+            required
+          />
+        </div>
+
+        <div class="form-group">
           <input type="submit" value="Submit Now" />
         </div>
 

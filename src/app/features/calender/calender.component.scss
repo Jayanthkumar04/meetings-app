@@ -23,12 +23,13 @@
   background-color: #63bccb;
   margin-bottom: 2px;
   position: relative;
+  font-size: 10px;
 }
 
 .top-left {
   position: absolute;
-  top: 0;
-  left: -10px;
+  top: 10px;
+  left: -30px;
   margin: 0;
 }
 
@@ -37,4 +38,26 @@
   bottom: 0;
   left: -10px;
   margin: 0;
+}
+
+.parent {
+  position: relative;
+}
+
+.data-display {
+  position: absolute;
+  top: 0px;
+}
+
+.attendees-container {
+  display: flex; /* Use flex to display emails in a row */
+  flex-wrap: wrap; /* Allow them to wrap if the row is too long */
+}
+
+.attendee-email {
+  display: inline-block; /* Make each email inline */
+  margin-right: 10px; /* Add some space between the emails */
+}
+p {
+  font-size: 10px;
 }

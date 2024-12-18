@@ -10,7 +10,7 @@ interface Users {
 interface IMeetings {
   startTime: ITime;
   endTime: ITime;
-  _id: string;
+  id: number;
   name: string;
   description: string;
   date: Date;
