@@ -22,8 +22,27 @@
   width: 100%;
   background-color: #63bccb;
   margin-bottom: 2px;
-  position: relative;
+  position: relative; /* Ensure the box is positioned */
   font-size: 10px;
+  z-index: 1; /* Give a lower z-index to the time slot box */
+}
+.meeting-box {
+  background-color: gray;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  max-height: 35px;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column; /* Align elements vertically */
+}
+
+.meeting-box p {
+  margin: 0; /* Remove margin from p tags */
+  padding: 0; /* Remove padding from p tags */
+  font-size: 10px; /* Adjust the font size to fit well */
 }
 
 .top-left {
@@ -50,10 +69,11 @@
 }
 
 .attendees-container {
-  display: flex; /* Use flex to display emails in a row */
-  flex-wrap: wrap; /* Allow them to wrap if the row is too long */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px; /* Optional: Add small space if needed */
+  padding: 0;
 }
-
 .attendee-email {
   display: inline-block; /* Make each email inline */
   margin-right: 10px; /* Add some space between the emails */

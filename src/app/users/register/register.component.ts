@@ -21,6 +21,7 @@ export class RegisterComponent {
     };
 
     console.log(user);
+
     if (form.value.password === form.value.password2) {
       this.userService.addUser(user).subscribe({
         next: (data) => {

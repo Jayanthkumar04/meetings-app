@@ -23,7 +23,7 @@ export class CalenderComponent implements OnInit {
 
   dateStr!: string;
 
-  hours: number[] = Array.from({ length: 24 }, (_, i) => i); // Generate hours array [0, 1, 2, ..., 23]
+  hours: number[] = Array.from({ length: 24 }, (_, i) => i);
 
   constructor(private featureService: FeaturesService) {}
   ngOnInit(): void {
@@ -60,23 +60,35 @@ export class CalenderComponent implements OnInit {
   }
 
   updateMeetingsOnCalendar() {
-    // Iterate over each meeting and map it to the corresponding box by hour
     this.ICalender.forEach((meeting) => {
       const startHour = parseInt(meeting.startTime.split(':')[0], 10); // Extract hour from starttime string
       const boxId = this.getBoxIdForHour(startHour);
 
-      // Get the corresponding HTML element for the box
       const boxElement = document.getElementById(boxId);
 
       if (boxElement) {
         const meetingContent = `
-          <div class="meeting-box" style="background-color: gray; margin: 5px;">
-            <p>${meeting.name}</p>
-            <div class="attendees-container">
+          <div class="meeting-box" style="background-color: gray; margin: 0px; max-height: 355px;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;">
+            <p style="margin:0px;margin: 0;
+  padding: 0;
+  font-size: 10px;">${meeting.name}</p>
+            <div class="attendees-container" style="display: flex;
+flex - direction: row;
+margin - top: 5px;
+padding: 0;
+gap: 5px;
+white - space: nowrap;">
               ${meeting.attendees
                 .map(
                   (attendee) =>
-                    `<p><span class="attendee-email">${attendee.email}</span></p>`
+                    `<p style="display: inline-block;
+  font-size: 9px;
+  margin-right: 10px;"><span class="attendee-email">${attendee.email}</span></p>`
                 )
                 .join('')}
             </div>
@@ -152,7 +164,13 @@ export class CalenderComponent implements OnInit {
     boxIds.forEach((boxId) => {
       const boxElement = document.getElementById(boxId);
       if (boxElement) {
+        const numberElement = boxElement.querySelector('.top-left');
+
+        const numberText = numberElement ? numberElement.textContent : '';
+
         boxElement.innerHTML = ''; // Clear the box content
+
+        boxElement.innerHTML = `<p class="top-left">${numberText}</p>`;
       }
     });
   }
